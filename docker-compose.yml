@@ -1,0 +1,9 @@
+version: "3"
+services:
+  flight-spotter-server:
+    build: ./server
+    image: myp-server
+  flight-spotter-client:
+    build: ./client
+    image: myp-client
+

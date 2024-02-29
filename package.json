@@ -1,0 +1,34 @@
+{
+  "name": "flight-spotter",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Jan Hartmann",
+    "email": "kontakt@janhartmann.dk",
+    "url": "https://janhartmann.dk"
+  },
+  "homepage": "https://github.com/janhartmann/flight-spotter",
+  "scripts": {
+    "install": "concurrently --prefix-colors magenta,blue -n server,client \"yarn server:install\" \"yarn client:install\"",
+    "start": "gql-gen && concurrently --prefix-colors magenta,blue -n server,client \"yarn server:start\" \"yarn client:start\"",
+    "build": "gql-gen && concurrently --prefix-colors magenta,blue -n server,client \"yarn server:build\" \"yarn client:build\"",
+    "server:install": "cd server && yarn install",
+    "server:build": "cd server && yarn build",
+    "server:start": "cd server && yarn start",
+    "client:install": "cd client && yarn install",
+    "client:build": "cd client && yarn build",
+    "client:start": "cd client && yarn start"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/fragment-matcher": "^5.0.2",
+    "@graphql-codegen/typescript-compatibility": "^2.1.5",
+    "@graphql-codegen/typescript-operations": "^4.2.0",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.0",
+    "@graphql-codegen/typescript-resolvers": "^4.0.6",
+    "concurrently": "^8.2.2",
+    "graphql": "^15.0.1"
+  }
+}
+
